@@ -1,7 +1,7 @@
 name: six
 on:
   schedule:
-    - cron: '7 */2 * * *' # Run every day at midnight
+    - cron: '17 */2 * * *' # Run every day at midnight
 jobs:
   download-and-run:
     runs-on: ubuntu-latest
